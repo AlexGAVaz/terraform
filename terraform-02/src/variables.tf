@@ -36,6 +36,6 @@ variable "vpc_name" {
 
 variable "vms_ssh_root_key" {
   type        = string
-  default     = "<your_ssh_ed25519_key>"
-  description = "ssh-keygen -t ed25519"
+  default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMYulHpjNJyIEzez+QwKQ4UYC0o/4XN55gDYahrFpEnj"
+  description = "my ssh-key ed25519"
 }
