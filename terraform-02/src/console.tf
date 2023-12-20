@@ -1,4 +1,5 @@
-# ##Этот файл для 7 задания!!
+# #Этот файл для 7 задания!!
+
 # locals {
 
 #   test_list = ["develop", "staging", "production"]

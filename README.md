@@ -19,5 +19,5 @@
 
 5. [Использование Terraform в команде](05/hw-05.md)
 
-
+ter-homeworks_0
 
