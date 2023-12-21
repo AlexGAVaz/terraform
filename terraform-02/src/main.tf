@@ -13,12 +13,12 @@ data "yandex_compute_image" "ubuntu" {
 }
 
 resource "yandex_compute_instance" "platform-web" {
-  name        = "${local.first_name}-${local.stage_name.web}"
-  platform_id = local.vms_resources.vm_web_resources.platform_id
+  name        = "${var.name_for_vm.web.first_name}-${var.name_for_vm.web.stage_name}"
+  platform_id = var.vms_resources.vm_web_resources.platform_id
   resources {
-    cores         = local.vms_resources.vm_web_resources.cores
-    memory        = local.vms_resources.vm_web_resources.memory
-    core_fraction = local.vms_resources.vm_web_resources.core_fraction
+    cores         = var.vms_resources.vm_web_resources.cores
+    memory        = var.vms_resources.vm_web_resources.memory
+    core_fraction = var.vms_resources.vm_web_resources.core_fraction
   }
   boot_disk {
     initialize_params {
@@ -40,12 +40,12 @@ resource "yandex_compute_instance" "platform-web" {
 }
 
 resource "yandex_compute_instance" "platform-db" {
-  name        = "${local.first_name}-${local.stage_name.db}"
-  platform_id = local.vms_resources.vm_db_resources.platform_id
+  name        = "${var.name_for_vm.db.first_name}-${var.name_for_vm.db.stage_name}"
+  platform_id = var.vms_resources.vm_db_resources.platform_id
   resources {
-    cores         = local.vms_resources.vm_db_resources.cores
-    memory        = local.vms_resources.vm_db_resources.memory
-    core_fraction = local.vms_resources.vm_db_resources.core_fraction
+    cores         = var.vms_resources.vm_db_resources.cores
+    memory        = var.vms_resources.vm_db_resources.memory
+    core_fraction = var.vms_resources.vm_db_resources.core_fraction
   }
   boot_disk {
     initialize_params {
