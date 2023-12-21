@@ -5,18 +5,20 @@ variable "vm_image" {
   description = "Family of the Yandex Compute Image"
 }
 
+variable "first_name" {
+  type    = string
+  default = "netology-develop-platform"
+}
+
 variable "name_for_vm" {
   type = map(object({
-    first_name = string
     stage_name = string
   }))
   default = {
     web = {
-      first_name = "netology-develop-platform"
       stage_name = "web"
     }
     db = {
-      first_name = "netology-develop-platform"
       stage_name = "db"
     }
   }

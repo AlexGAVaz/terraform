@@ -13,7 +13,7 @@ data "yandex_compute_image" "ubuntu" {
 }
 
 resource "yandex_compute_instance" "platform-web" {
-  name        = "${var.name_for_vm.web.first_name}-${var.name_for_vm.web.stage_name}"
+  name        = "${var.first_name}-${var.name_for_vm.web.stage_name}"
   platform_id = var.vms_resources.vm_web_resources.platform_id
   resources {
     cores         = var.vms_resources.vm_web_resources.cores
@@ -40,7 +40,7 @@ resource "yandex_compute_instance" "platform-web" {
 }
 
 resource "yandex_compute_instance" "platform-db" {
-  name        = "${var.name_for_vm.db.first_name}-${var.name_for_vm.db.stage_name}"
+  name        = "${var.first_name}-${var.name_for_vm.db.stage_name}"
   platform_id = var.vms_resources.vm_db_resources.platform_id
   resources {
     cores         = var.vms_resources.vm_db_resources.cores
