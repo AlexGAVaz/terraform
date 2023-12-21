@@ -1,7 +1,6 @@
 resource "yandex_vpc_network" "develop" {
   name = var.vpc_name
 }
-
 resource "yandex_vpc_subnet" "develop" {
   name           = var.vpc_name
   zone           = var.default_zone
@@ -35,8 +34,8 @@ resource "yandex_compute_instance" "platform-web" {
     nat       = true
   }
   metadata = {
-    serial-port-enable = 1
-    ssh-keys           = "${var.vm_username}:${var.vms_ssh_root_key}"
+    serial-port-enable = local.vms_metadata.serial-port-enable
+    ssh-keys           = local.vms_metadata.ssh-keys
   }
 }
 
