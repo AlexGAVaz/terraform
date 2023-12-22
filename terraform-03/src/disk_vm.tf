@@ -6,7 +6,8 @@ resource "yandex_compute_disk" "storage-disk" {
 }
 
 resource "yandex_compute_instance" "storage-vm" {
-  name        = "storage-vm"
+  count       = 1
+  name        = "storage-vm-${count.index + 1}"
   platform_id = "standard-v1"
   resources {
     cores         = 2
