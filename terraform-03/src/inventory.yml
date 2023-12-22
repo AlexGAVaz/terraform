@@ -1,0 +1,17 @@
+[webservers]
+
+web-1 ansible_host=51.250.94.217
+
+web-2 ansible_host=158.160.57.75
+
+
+[databases]
+
+main ansible_host=158.160.44.14
+
+replica ansible_host=84.201.159.217
+
+
+[storage]
+
+storage-vm-1 ansible_host=84.201.131.87

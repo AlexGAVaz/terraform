@@ -35,5 +35,4 @@ resource "null_resource" "web_hosts_provision" {
     playbook_src_hash = file("${abspath(path.module)}/test.yml")
     ssh_public_key    = local.vms_metadata.ssh-keys
   }
-
 }
