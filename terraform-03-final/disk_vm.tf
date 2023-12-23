@@ -6,14 +6,15 @@ resource "yandex_compute_disk" "storage-disk" {
 }
 
 resource "yandex_compute_instance" "storage-vm" {
-  count       = 1
-  name        = "storage-vm-${count.index + 1}"
+  name        = "storage"
   platform_id = "standard-v1"
+
   resources {
     cores         = 2
     memory        = 1
     core_fraction = 5
   }
+
   boot_disk {
     initialize_params {
       image_id = data.yandex_compute_image.ubuntu.image_id
