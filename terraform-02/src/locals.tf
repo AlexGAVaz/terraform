@@ -5,3 +5,9 @@ locals {
   }
 }
 
+locals {
+  vms_nname = {
+    web = "${var.first_name}-${var.web_name}"
+    db  = "${var.first_name}-${var.db_name}"
+  }
+}

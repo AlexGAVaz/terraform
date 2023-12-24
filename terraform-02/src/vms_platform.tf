@@ -10,9 +10,18 @@ variable "first_name" {
   default = "netology-develop-platform"
 }
 
+variable "web_name" {
+  type    = string
+  default = "web"
+}
+
+variable "db_name" {
+  type    = string
+  default = "db"
+}
+
 variable "vms_resources" {
   type = map(object({
-    stage_name    = string
     platform_id   = string
     cores         = number
     memory        = number
@@ -20,14 +29,12 @@ variable "vms_resources" {
   }))
   default = {
     vm_web_resources = {
-      stage_name    = "web"
       platform_id   = "standard-v1"
       cores         = 2
       memory        = 2
       core_fraction = 5
     }
     vm_db_resources = {
-      stage_name    = "db"
       platform_id   = "standard-v1"
       cores         = 2
       memory        = 2
